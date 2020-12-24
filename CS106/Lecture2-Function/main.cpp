@@ -14,13 +14,18 @@
 #include <iostream>
 using namespace std;
 
-void printTest();
-
-int main() {
-    printTest();
-    return 0;
+void swap(int x, int y) {
+    int tmp = x;
+    x = y;
+    y = tmp;
 }
 
-void printTest() {
-    cout << "success" << endl;
+int main() {
+    int a = 17, b = 35;
+    swap(a,b);
+    cout << "a = " << a << ", b = " << b << endl;
+    // a = 17, b = 35
+    // function use value parameters
+    // don't affect origin varialble
+    return 0;
 }
