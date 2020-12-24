@@ -14,7 +14,7 @@
 #include <iostream>
 using namespace std;
 
-void drawLine(int width = 5, char c = '*') {
+void drawLine(int width, char c = '*') {
     for (int i = 0; i < width; i++) {
         cout << c;
     }
@@ -22,13 +22,8 @@ void drawLine(int width = 5, char c = '*') {
 }
 
 int main() {
-    drawLine();
+    //drawLine(); //no match
     drawLine(10);
     drawLine(7,'?');
-    drawLine('x');
-    cout << (int) 'x';
-    //(int)'x' == 120
-    // defalut parameter is base on position
-    //************************************************************************************************************************
     return 0;
 }
