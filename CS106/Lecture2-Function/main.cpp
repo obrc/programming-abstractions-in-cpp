@@ -14,6 +14,8 @@
 #include <iostream>
 using namespace std;
 
+void printTest();
+
 int main() {
     printTest();
     return 0;
