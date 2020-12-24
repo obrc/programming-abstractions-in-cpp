@@ -14,19 +14,16 @@
 #include <iostream>
 using namespace std;
 
-void swap(int &x, int &y) {
-    int tmp = x;
-    x = y;
-    y = tmp;
+void drawLine(int width = 5, char c = '*') {
+    for (int i = 0; i < width; i++) {
+        cout << c;
+    }
+    cout << endl;
 }
 
 int main() {
-    int a = 17, b = 35;
-    swap(a,b);
-    cout << "a = " << a << ", b = " << b << endl;
-    // a = 35, b = 17
-    // function use reference parameters
-    // link to same memory
-    // so values that a,b in main point swap too
+    drawLine();
+    drawLine(10);
+    drawLine(7,'?');
     return 0;
 }
