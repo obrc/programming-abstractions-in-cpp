@@ -14,11 +14,11 @@
 #include <iostream>
 using namespace std;
 
-void printTest() {
-    cout << "success" << endl;
-}
-
 int main() {
     printTest();
     return 0;
+}
+
+void printTest() {
+    cout << "success" << endl;
 }
