@@ -33,10 +33,8 @@
 using namespace std;
 
 int main() {
-    string s = "Hello, World!";
-    for (int i = 0; i < s.length() + 1; i++)
-        cout << (int)s[i] << " ";
-    cout << endl;
-    // 72 101 108 108 111 44 32 87 111 114 108 100 33 0
+    string s1 = "Hello", s2 = "World!";
+    string s = s1 + ',' + ' ' + s2;
+    cout << s << endl;
     return 0;
 }
