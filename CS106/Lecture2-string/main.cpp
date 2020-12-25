@@ -39,8 +39,10 @@ int main() {
     s.append(" Nice to meet you ~");
     cout << s << endl;
     // s.erase(6,7);
-    cout << s.find("World") << endl;
-    cout << s.rfind(" World") << endl;
+    cout << s.find("e") << endl;
+    cout << s.rfind("e") << endl;
     cout << string::npos << endl;
+    // find return 1 (first match, "Hello")
+    // rfind return 24 (last match, "meet")
     return 0;
 }
