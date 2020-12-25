@@ -21,7 +21,8 @@ int main() {
         countLine++;
     }
     cout << "Total " << countLine << " lines" << endl;
-    //Total 5 lines
+    input.close();
+    input.open("data.txt");
     int countWord = 0;
     string token;
     while(input >> token) {
@@ -29,7 +30,6 @@ int main() {
         countWord++;
     }
     cout << "Total " << countWord << " wrods" << endl;
-    //Total 0 wrods
-    //Because fstream is run out (end of file)
+    input.close();
     return 0;
 }
