@@ -17,8 +17,10 @@
 using namespace std;
 
 int main() {
-    Vector<int> nums = {42, 23, 15, 899, 1};
-    for (int i = 0; i < nums.size(); i++)
-        cout << nums[i] << " ";
+    Vector<string> names;
+    names.add("zhao qian");
+    names.add("sun li");
+    names.add("bai jia xing");
+    cout << names << endl;
     return 0;
 }
