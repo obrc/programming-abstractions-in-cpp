@@ -13,10 +13,10 @@ using namespace std;
 
 int main() {
     string s;
-    cin >> s;
+    getline(cin,s);
     cout << "repeat what you input :" << s;
-    //yes ok
-    //repeat what you input :yes
-    //cin can't handle blank (see blank as input end flag)
+    //yes ok haha
+    //repeat what you input :yes ok haha
+    //use getline method to handle blank
     return 0;
 }
