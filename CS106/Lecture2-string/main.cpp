@@ -35,14 +35,10 @@ using namespace std;
 int main() {
     string s1 = "Hello", s2 = "World!";
     string s = s1 + ',' + ' ' + s2;
-    cout << "insert cursor at " << s[s1.length()] << endl;
-    //insert at ,
-    s.insert(s1.length()," Beautiful");
+    s.replace(7, 6, "you");
+    // index 7,len 6 to select "World!" in s
+    // replace by "you"
     cout << s << endl;
-    //Hello Beautiful, World!
-    cout << s.find(" Beautiful") << endl;
-    // so insert operation
-    // 1) move characters of index and after index back
-    // 2) add begin at index
+    // Hello, you
     return 0;
 }
