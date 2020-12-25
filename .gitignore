@@ -1,6 +1,9 @@
 # MacOS
 .DS_Store
 
+# CS106B
+*.app
+
 # C++ objects and libs
 *.slo
 *.lo
