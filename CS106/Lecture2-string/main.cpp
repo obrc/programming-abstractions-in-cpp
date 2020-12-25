@@ -34,9 +34,9 @@ using namespace std;
 
 int main() {
     string s = "Hello, World!";
-    for (int i = 0; i < s.length(); i++)
+    for (int i = 0; i < s.length() + 1; i++)
         cout << (int)s[i] << " ";
     cout << endl;
-    // 72 101 108 108 111 44 32 87 111 114 108 100 33
+    // 72 101 108 108 111 44 32 87 111 114 108 100 33 0
     return 0;
 }
