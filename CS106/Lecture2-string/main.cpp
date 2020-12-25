@@ -30,35 +30,26 @@
 
 #include <iostream>
 #include <string>
+#include "strlib.h"
 using namespace std;
 
-void nameDiamond(string name) {
-    for (int i = 0; i < name.length(); i++){
-        cout << name.substr(0, i + 1) << endl;
-    }
-    for (int i = 0; i < name.length(); i++){
-        for (int j = 0; j < i+1; j++)
-            cout << " ";
-        cout << name.substr(i+1) << endl;
-    }
-}
-
 int main() {
-    nameDiamond("superme");
-/*
-s
-su
-sup
-supe
-super
-superm
-superme
- uperme
-  perme
-   erme
-    rme
-     me
-      e
-*/
+    string s = "Hello, superme";
+    cout << s << endl;
+    if (endsWith(s,"superme"))
+        s = toLowerCase(s);
+    cout << s << endl;
+    if (startsWith(s,"hello"))
+        s = toUpperCase(s);
+    cout << s << endl;
+    if (equalsIgnoreCase("Hello","hello")) {
+        string s1 = "   help me    ";
+        cout << trim(s1) << endl;
+    }
+    string s2 = integerToString(41);
+    cout << s2 << " " << stringToInteger(s2) << endl;
+    double pi = 3.1415926;
+    s2 = realToString(pi);
+    cout << s2 << " " << stringToReal(s2) << endl;
     return 0;
 }
