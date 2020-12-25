@@ -14,7 +14,7 @@
  *  s.insert(index, str)
  *  s.lenght or s.size
  *  s.replace
- *  s.substr
+ *  s.substr : print diamond
  * string stanford library operation
  * endsWith
  * startWith
@@ -32,13 +32,33 @@
 #include <string>
 using namespace std;
 
+void nameDiamond(string name) {
+    for (int i = 0; i < name.length(); i++){
+        cout << name.substr(0, i + 1) << endl;
+    }
+    for (int i = 0; i < name.length(); i++){
+        for (int j = 0; j < i+1; j++)
+            cout << " ";
+        cout << name.substr(i+1) << endl;
+    }
+}
+
 int main() {
-    string s1 = "Hello", s2 = "World!";
-    string s = s1 + ',' + ' ' + s2;
-    s.replace(7, 6, "you");
-    // index 7,len 6 to select "World!" in s
-    // replace by "you"
-    cout << s << endl;
-    // Hello, you
+    nameDiamond("superme");
+/*
+s
+su
+sup
+supe
+super
+superm
+superme
+ uperme
+  perme
+   erme
+    rme
+     me
+      e
+*/
     return 0;
 }
