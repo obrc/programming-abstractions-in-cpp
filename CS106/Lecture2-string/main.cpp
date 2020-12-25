@@ -35,14 +35,14 @@ using namespace std;
 int main() {
     string s1 = "Hello", s2 = "World!";
     string s = s1 + ',' + ' ' + s2;
-    // cout << s << endl;
-    s.append(" Nice to meet you ~");
+    cout << "insert cursor at " << s[s1.length()] << endl;
+    //insert at ,
+    s.insert(s1.length()," Beautiful");
     cout << s << endl;
-    // s.erase(6,7);
-    cout << s.find("e") << endl;
-    cout << s.rfind("e") << endl;
-    cout << string::npos << endl;
-    // find return 1 (first match, "Hello")
-    // rfind return 24 (last match, "meet")
+    //Hello Beautiful, World!
+    cout << s.find(" Beautiful") << endl;
+    // so insert operation
+    // 1) move characters of index and after index back
+    // 2) add begin at index
     return 0;
 }
