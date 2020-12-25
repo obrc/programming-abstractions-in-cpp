@@ -35,19 +35,12 @@ using namespace std;
 int main() {
     string s1 = "Hello", s2 = "World!";
     string s = s1 + ',' + ' ' + s2;
-    cout << s << endl;
+    // cout << s << endl;
     s.append(" Nice to meet you ~");
     cout << s << endl;
-    s.erase(6,7);
-    cout << s << endl;
-    //Hello, World!
-    //Hello, World! Nice to meet you ~
-    //Hello, Nice to meet you ~
-    s[0] = 'h';
-    cout << s << endl;
-    //hello, Nice to meet you ~
-
-    //diff to java
-    // java's string is an unmutable memroy bolck, link to String object
+    // s.erase(6,7);
+    cout << s.find("World") << endl;
+    cout << s.rfind(" World") << endl;
+    cout << string::npos << endl;
     return 0;
 }
