@@ -14,6 +14,7 @@ void exer2();
 void exer3();
 void exer4();
 void exer5();
+void exer6();
 
 int main() {
     setConsoleSize(700, 400);
@@ -21,7 +22,8 @@ int main() {
     //exer2();
     //exer3();
     //exer4();
-    exer5();
+    //exer5();
+    exer6();
     return 0;
 }
 
@@ -102,24 +104,49 @@ void exer5() {
 
 /*
 6.
-
 For a slightly more interesting challenge, write a program that finds both the largest and the second-largest number in a list, prior to the entry of a sentinel.
 
 If you once again use 0 as the sentinel, a sample run of this program might look like this:
 
-The values in this sample run are the number of pages in the British hardcover editions of J. K. Rowling’s Harry Potter series. The output therefore tells us
+The values in this sample run are the number of pages in the British hardcover editions of J. K. Rowling’s Harry Potter series. The output therefore tells us that the longest book ( Harry Potter and the Order of the Phoenix) has 766 pages and the second-longest book ( Harry Potter and the Goblet of Fire) weighs in at a mere 636 pages.
+*/
+void exer6() {
+    const int sentinel = 0;
+    string prompt = "Enter a integer (" +  integerToString(sentinel) + " to quit) :";
+    int max, rmax; // max and the max of remain
+    int input = getInteger(prompt);
+    if (input == sentinel) {
+        cout << "The largest value is " << input << endl;
+        return; // quit because first input is sentinel
+    } else if (input < sentinel){ //consider second input is sentinel
+        max = sentinel;
+        rmax = input;
+    } else {
+        max = input;
+        rmax = sentinel;
+    }
+    while ((input = getInteger(prompt)) != sentinel) {
+        if (input > max) {
+            rmax = max;
+            max = input;
+        }
+        else if (input > rmax)
+            rmax = input;
+    }
+    cout << "The largest value is " << max << endl;
+    cout << "The second-largest value is " << rmax << endl;
+}
+/* for the case
+Enter a integer (-3 to quit) : 0
+Enter a integer (-3 to quit) : -3
+The largest value is 0
+The second-largest value is -3
+*/
 
 
 
 
-
-52
-
-Overview of C++
-
-that the longest book ( Harry Potter and the Order of the Phoenix) has 766
-
-pages and the second-longest book ( Harry Potter and the Goblet of Fire) weighs in at a mere 636 pages.
+/*
 
 7.
 
