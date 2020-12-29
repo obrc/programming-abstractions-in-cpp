@@ -177,12 +177,14 @@ output integer: 987654321
 void exer8() {
     /* get the Integer part and remain by dividing 10 each time until Integer part is 0 */
     int input = getInteger("Enter a posivtive Integer: ");
+    int reverse = 0;
     cout << "Reverse order of " << input << " is ";
     while(input != 0) {
-        cout << input % 10;
+        reverse *= 10;
+        reverse += input % 10;
         input /= 10;
     }
-    cout << endl;
+    cout << reverse << endl;
 }
 
 
