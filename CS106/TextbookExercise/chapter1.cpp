@@ -19,6 +19,7 @@ void exer7();
 void exer8();
 void exer9();
 void exer10();
+void exer11();
 
 int main() {
     setConsoleSize(700, 400);
@@ -31,7 +32,8 @@ int main() {
     //exer7();
     //exer8();
     //exer9();
-    exer10();
+    //exer10();
+    exer11();
     return 0;
 }
 
@@ -282,6 +284,21 @@ $$\frac{\pi}{4}\sim 1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots$$
 The formula to the right of the equal sign represents an infinite series; each fraction represents a term in that series. If you start with 1, subtract one-third, add one-fifth, and so on, for each of the odd integers, you get a number that gets closer and closer to the value of π/4 as you go along.
 
 Write a program that calculates an approximation of π consisting of the first 10,000 terms in Leibniz’s series.
+*/
+void exer11() {
+    /* Leibniz’s series */
+    const int terms = 10000;
+    double pi = 0;
+    for (int i = 0; i < terms; i++) {
+        double t = 1 / (double)(2 * i + 1); // don't forget to converse int to double
+        t = (i % 2 == 0 ? t : -t);
+        pi += t;
+    }
+    pi *= 4;
+    cout << "π consisting of the first " << terms << " terms is " << pi;
+}
+
+/*
 
 12. You can also compute π by approximating the area bounded by a circular arc. Consider the following quarter circle:
 
