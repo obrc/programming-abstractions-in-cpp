@@ -17,6 +17,7 @@ void exer5();
 void exer6();
 void exer7();
 void exer8();
+void exer9();
 
 int main() {
     setConsoleSize(700, 400);
@@ -27,7 +28,8 @@ int main() {
     //exer5();
     //exer6();
     //exer7();
-    exer8();
+    //exer8();
+    exer9();
     return 0;
 }
 
@@ -187,15 +189,57 @@ void exer8() {
     cout << reverse << endl;
 }
 
-
 /*
-9.
-
-Every positive integer greater than 1 can be expressed as a product of prime numbers. This factorization is unique and is called the prime factorization.
+9.Every positive integer greater than 1 can be expressed as a product of prime numbers. This factorization is unique and is called the prime factorization.
 
 For example, the number 60 can be decomposed into the factors 2 x 2 x 3 x 5, each of which is prime. Note that the same prime can appear more than once in the factorization.
 
 Write a program to display the prime factorization of a number n, as illustrated by the following sample run:
+
+60 = 2 x 2 x 3 x 5
+*/
+bool isPrim(int n) {
+    /*
+     * given a number x, only check the oddy number of 3 to sqrt(x)
+     * further more, only check the prime number of 3 to sqrt(x)
+     *
+     */
+
+    /* corner case */
+    // if (n <= 1) return false; // becasue we begin with prime 2
+    if (n <= 3) return true;
+    /* for the loop to skip middle five numbers */
+    if (n % 2 == 0|| n % 3 == 0) return false;
+    /* loop test */
+    int i = 5;
+    while (i * i <= n) {
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+        i += 6;
+    }
+    /* pass all test */
+    return true;
+}
+int getNextPrime(int n) {
+    while(!isPrim(++n));
+    return n;
+}
+void exer9() {
+    /* prime factorization */
+    int prime = 2;
+    int num = getInteger("Enter a positive number: ");
+    cout << num << " = ";
+    while(num > 1) {
+        if (num % prime == 0) {
+            num = num / prime;
+            if (num == 1) cout << prime;
+            else cout << prime << " x ";
+        } else
+            prime = getNextPrime(prime);
+    }
+}
+
+/*
 
 10. In 1979, Douglas Hofstadter, Professor of Cognitive Science at the University of Indiana, wrote Gödel, Escher, Bach, which he described as “a metaphorical fugue on minds and machines in the spirit of Lewis Carroll.” The book won the Pulitzer Prize for Literature and has over the years become one of the classics of computer science. Much of its charm comes from the mathematical oddities and puzzles it contains, many of which can be expressed in the form of computer programs. Of these, one of the most interesting concerns the
 
