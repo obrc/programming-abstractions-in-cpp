@@ -6,19 +6,22 @@
 #include <iostream>
 #include "console.h"
 #include "simpio.h"
+#include "strlib.h"
 using namespace std;
 
 void exer1();
 void exer2();
 void exer3();
 void exer4();
+void exer5();
 
 int main() {
     setConsoleSize(700, 400);
     //exer1();
     //exer2();
     //exer3();
-    exer4();
+    //exer4();
+    exer5();
     return 0;
 }
 
@@ -79,13 +82,25 @@ void exer4() {
 }
 
 /*
-
-5.
-
-Write a program that reads in a list of integers from the user until the user enters the value 0 as a sentinel. When the sentinel appears, your program should display the largest value in the list, as illustrated in the following sample run:
+5.Write a program that reads in a list of integers from the user until the user enters the value 0 as a sentinel. When the sentinel appears, your program should display the largest value in the list, as illustrated in the following sample run:
 
 Be sure to define the sentinel value as a constant in a way that makes it easy to change. You should also make sure that the program works correctly if all the input values are negative.
+*/
+void exer5() {
+    // for integerToString, we should #include "strlib.h"
+    const int sentinel = 0;
+    string prompt = "Enter a integer (" +  integerToString(sentinel) + " to quit) :";
+    int input = getInteger(prompt);
+    int max = input; // store the largest value of each input
+    while (input != sentinel) {
+        input = getInteger(prompt);
+        if (input > max)
+            max = input;
+    }
+    cout << "The largest value is " << max << endl;
+}
 
+/*
 6.
 
 For a slightly more interesting challenge, write a program that finds both the largest and the second-largest number in a list, prior to the entry of a sentinel.
