@@ -15,6 +15,7 @@ void exer3();
 void exer4();
 void exer5();
 void exer6();
+void exer7();
 
 int main() {
     setConsoleSize(700, 400);
@@ -23,7 +24,8 @@ int main() {
     //exer3();
     //exer4();
     //exer5();
-    exer6();
+    //exer6();
+    exer7();
     return 0;
 }
 
@@ -118,7 +120,7 @@ void exer6() {
     if (input == sentinel) {
         cout << "The largest value is " << input << endl;
         return; // quit because first input is sentinel
-    } else if (input < sentinel){ //consider second input is sentinel
+    } else if (input < sentinel){ // consider second input is sentinel
         max = sentinel;
         rmax = input;
     } else {
@@ -143,14 +145,26 @@ The largest value is 0
 The second-largest value is -3
 */
 
-
-
+/*
+7.Using the AddIntegerList program from Figure 1-5 as a model, write a program AverageList that reads in a list of integers representing exam scores and then prints out the average. Because some unprepared student might actually get a score of 0, your program should use −1 as the sentinel to mark the end of the input.
+*/
+void exer7() {
+    const double sentinel = -1;
+    string prompt = "Enter the score of student ("
+                    + integerToString(sentinel) + " to quit):";
+    int count = 0; // for average, should store sum and input times
+    double input, sum = 0;
+    while ((input = getDouble(prompt)) != sentinel) {
+        count++;
+        sum = sum + input;
+    }
+    if (count == 0)
+        cout << "No socre data" << endl;
+    else
+        cout << "The average of students' scores is " << sum / count << endl;
+}
 
 /*
-
-7.
-
-Using the AddIntegerList program from Figure 1-5 as a model, write a program AverageList that reads in a list of integers representing exam scores and then prints out the average. Because some unprepared student might actually get a score of 0, your program should use −1 as the sentinel to mark the end of the input.
 
 8.
 
