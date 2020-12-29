@@ -11,12 +11,14 @@ using namespace std;
 void exer1();
 void exer2();
 void exer3();
+void exer4();
 
 int main() {
     setConsoleSize(700, 400);
     //exer1();
     //exer2();
-    exer3();
+    //exer3();
+    exer4();
     return 0;
 }
 
@@ -60,9 +62,23 @@ void exer3() {
 }
 
 /*
-4.
+4.Write a program that reads in a positive integer N and then calculates and displays the sum of the first N odd integers. For example, if N is 4, your program should display the value 16, which is 1 + 3 + 5 + 7.
+*/
+void exer4() {
+    int n = getInteger("Enter the number of odd integers:");
+    int sum = 0;
+    for (int i = 1; i < n; i++) {
+        int odd = 2*i - 1; // 2*i - 1 to get the odd integers
+        cout << odd << " + ";
+        sum += odd;
 
-Write a program that reads in a positive integer N and then calculates and displays the sum of the first N odd integers. For example, if N is 4, your program should display the value 16, which is 1 + 3 + 5 + 7.
+    }
+    cout << 2*n -1;
+    sum += 2*n -1;
+    cout << " = " << sum << endl;
+}
+
+/*
 
 5.
 
