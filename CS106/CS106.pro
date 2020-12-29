@@ -6,7 +6,8 @@ SUBDIRS = Library Welcome \
     Lecture2-cmath \
     Lecture2-string \
     Lecture3-collections \
-    Lecture3-stream
+    Lecture3-stream \
+    TextbookExercise
 
 # ordered forces subprojects to build sequentially, according to SUBDIRS
 CONFIG += ordered
