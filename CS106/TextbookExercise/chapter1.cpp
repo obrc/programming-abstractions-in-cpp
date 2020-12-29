@@ -1,5 +1,5 @@
 /*
- * This program is the solution of exercise of chapter 01
+ * This program is the solutions of exercise of chapter 01
  * each solution is within a function
  */
 
@@ -9,10 +9,12 @@
 using namespace std;
 
 void exer1();
+void exer2();
 
 int main() {
     setConsoleSize(700, 400);
-    exer1();
+    //exer1();
+    exer2();
     return 0;
 }
 
@@ -27,14 +29,20 @@ void exer1() {
          << cels + 32 << endl;
 }
 
-
 /*
-2.
-
-Write a program that converts a distance in meters to the corresponding English distance in feet and inches. The conversion factors you need are 1 inch = 0.0254 meters
-
+2.Write a program that converts a distance in meters to the corresponding English distance in feet and inches. The conversion factors you need are
+1 inch = 0.0254 meters
 1 foot = 12 inches
-
+*/
+void exer2() {
+    double meter = getDouble("Enter a distance in meters: ");
+    /* convert to feet and inches */
+    double inch = meter / 0.0254;
+    double foot = inch / 12;
+    cout << meter << " meters eqaul " << inch << " inches" << endl;
+    cout << meter << " meters eqaul " << foot << " feet" << endl;
+}
+/*
 3.
 
 As mathematical historians have told the story, the German mathematician Carl Friedrich Gauss (1777–1855) began to show his mathematical talent at a very early age. When he was in elementary school, Gauss was asked by his teacher to compute the sum of the numbers between 1 and 100. Gauss is said to have
