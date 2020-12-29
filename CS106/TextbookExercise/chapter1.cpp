@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+#include <cmath>
 #include "console.h"
 #include "simpio.h"
 #include "strlib.h"
@@ -20,8 +21,9 @@ void exer8();
 void exer9();
 void exer10();
 void exer11();
+void exer12();
 
-int main() {
+int main_complete() {
     setConsoleSize(700, 400);
     //exer1();
     //exer2();
@@ -33,7 +35,8 @@ int main() {
     //exer8();
     //exer9();
     //exer10();
-    exer11();
+    //exer11();
+    //exer12();
     return 0;
 }
 
@@ -299,7 +302,7 @@ void exer11() {
 }
 
 /*
-
+(picture lose, more detail to Textbook page 54)
 12. You can also compute π by approximating the area bounded by a circular arc. Consider the following quarter circle:
 
 which has a radius r equal to two inches. From the formula for the area of a circle, you can easily determine that the area of the quarter circle should be π
@@ -316,3 +319,15 @@ The area of each rectangle is then simply h × w.
 
 Write a program to compute the area of the quarter circle by dividing it into 10,000 rectangles.
 */
+void exer12() {
+    // for sqrt(), we should #include <cmath>
+    // which has a radius r equal to two inches
+    const int rectangles = 10000;
+    double w = 2 / (double)rectangles;
+    double pi = 0;
+    for (int i = 1; i <= rectangles; i++) {
+        double h = sqrt( 2 * 2 - pow(w * i, 2));
+        pi += w * h;
+    }
+    cout << "dividing it into " << rectangles << " rectangles is " << pi << endl;
+}
