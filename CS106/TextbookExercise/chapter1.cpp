@@ -16,6 +16,7 @@ void exer4();
 void exer5();
 void exer6();
 void exer7();
+void exer8();
 
 int main() {
     setConsoleSize(700, 400);
@@ -25,7 +26,8 @@ int main() {
     //exer4();
     //exer5();
     //exer6();
-    exer7();
+    //exer7();
+    exer8();
     return 0;
 }
 
@@ -146,7 +148,7 @@ The second-largest value is -3
 */
 
 /*
-7.Using the AddIntegerList program from Figure 1-5 as a model, write a program AverageList that reads in a list of integers representing exam scores and then prints out the average. Because some unprepared student might actually get a score of 0, your program should use −1 as the sentinel to mark the end of the input.
+7.Using the AddIntegerList program from Figure 1-5 as a model, write a program AverageList that reads in a list of integers represent ing exam scores and then prints out the average. Because some unprepared student might actually get a score of 0, your program should use −1 as the sentinel to mark the end of the input.
 */
 void exer7() {
     const double sentinel = -1;
@@ -165,13 +167,26 @@ void exer7() {
 }
 
 /*
-
-8.
-
-Using the digitSum function from the section entitled “The while statement”
+8.Using the digitSum function from the section entitled “The while statement”
 
 as a model, write a program that reads in an integer and then displays the number that has the same digits in the reverse order, as illustrated by this sample run:
 
+input positive integer: 123456789
+output integer: 987654321
+*/
+void exer8() {
+    /* get the Integer part and remain by dividing 10 each time until Integer part is 0 */
+    int input = getInteger("Enter a posivtive Integer: ");
+    cout << "Reverse order of " << input << " is ";
+    while(input != 0) {
+        cout << input % 10;
+        input /= 10;
+    }
+    cout << endl;
+}
+
+
+/*
 9.
 
 Every positive integer greater than 1 can be expressed as a product of prime numbers. This factorization is unique and is called the prime factorization.
