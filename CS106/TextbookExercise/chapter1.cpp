@@ -10,11 +10,13 @@ using namespace std;
 
 void exer1();
 void exer2();
+void exer3();
 
 int main() {
     setConsoleSize(700, 400);
     //exer1();
-    exer2();
+    //exer2();
+    exer3();
     return 0;
 }
 
@@ -42,21 +44,22 @@ void exer2() {
     cout << meter << " meters eqaul " << inch << " inches" << endl;
     cout << meter << " meters eqaul " << foot << " feet" << endl;
 }
+
 /*
-3.
+3.As mathematical historians have told the story, the German mathematician Carl Friedrich Gauss (1777–1855) began to show his mathematical talent at a very early age. When he was in elementary school, Gauss was asked by his teacher to compute the sum of the numbers between 1 and 100. Gauss is said to have given the answer instantly: 5050. Write a program that computes the answer to the question Gauss’s teacher posed.
+*/
+void exer3() {
+    /* sum 1 to 100 */
+    int sum = 0;
+    for (int i = 1; i <= 100; i++)
+        sum += i;
+    cout <<  "the answer is " << sum << endl;
+    /* Gauss' way */
+    sum = 100 * 101 / 2;
+    cout <<  "the answer is " << sum << endl;
+}
 
-As mathematical historians have told the story, the German mathematician Carl Friedrich Gauss (1777–1855) began to show his mathematical talent at a very early age. When he was in elementary school, Gauss was asked by his teacher to compute the sum of the numbers between 1 and 100. Gauss is said to have
-
-
-
-
-
-Exercises
-
-51
-
-given the answer instantly: 5050. Write a program that computes the answer to the question Gauss’s teacher posed.
-
+/*
 4.
 
 Write a program that reads in a positive integer N and then calculates and displays the sum of the first N odd integers. For example, if N is 4, your program should display the value 16, which is 1 + 3 + 5 + 7.
