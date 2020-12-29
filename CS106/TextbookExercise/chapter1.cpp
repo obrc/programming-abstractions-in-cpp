@@ -18,6 +18,7 @@ void exer6();
 void exer7();
 void exer8();
 void exer9();
+void exer10();
 
 int main() {
     setConsoleSize(700, 400);
@@ -29,7 +30,8 @@ int main() {
     //exer6();
     //exer7();
     //exer8();
-    exer9();
+    //exer9();
+    exer10();
     return 0;
 }
 
@@ -109,8 +111,7 @@ void exer5() {
 }
 
 /*
-6.
-For a slightly more interesting challenge, write a program that finds both the largest and the second-largest number in a list, prior to the entry of a sentinel.
+6.For a slightly more interesting challenge, write a program that finds both the largest and the second-largest number in a list, prior to the entry of a sentinel.
 
 If you once again use 0 as the sentinel, a sample run of this program might look like this:
 
@@ -239,71 +240,50 @@ void exer9() {
     }
 }
 
-/*
+/*10. In 1979, Douglas Hofstadter, Professor of Cognitive Science at the University of Indiana, wrote Gödel, Escher, Bach, which he described as “a metaphorical fugue on minds and machines in the spirit of Lewis Carroll.” The book won the Pulitzer Prize for Literature and has over the years become one of the classics of computer science. Much of its charm comes from the mathematical oddities and puzzles it contains, many of which can be expressed in the form of computer programs. Of these, one of the most interesting concerns the sequence of numbers formed by repeatedly executing the following rules for some positive integer n:
 
-10. In 1979, Douglas Hofstadter, Professor of Cognitive Science at the University of Indiana, wrote Gödel, Escher, Bach, which he described as “a metaphorical fugue on minds and machines in the spirit of Lewis Carroll.” The book won the Pulitzer Prize for Literature and has over the years become one of the classics of computer science. Much of its charm comes from the mathematical oddities and puzzles it contains, many of which can be expressed in the form of computer programs. Of these, one of the most interesting concerns the
+1. If n is equal to 1, you’ve reached the end of the sequence and can stop.
 
+2. If n is even, divide it by two.
 
+3. If n is odd, multiply it by three and add one.
 
-
-
-Exercises
-
-53
-
-sequence of numbers formed by repeatedly executing the following rules for some positive integer n:
-
-•
-
-If n is equal to 1, you’ve reached the end of the sequence and can stop.
-
-•
-
-If n is even, divide it by two.
-
-•
-
-If n is odd, multiply it by three and add one.
-
-Although it also goes by several other names, this sequence is often called the
-
-hailstone sequence, because the values tend to go up and down, much as hailstones do in the clouds in which they form.
+Although it also goes by several other names, this sequence is often called the hailstone sequence, because the values tend to go up and down, much as hailstones do in the clouds in which they form.
 
 Write a program that reads in a number from the user and then generates the hailstone sequence from that point, as in the following sample run: As you can see, this program offers a narrative account of the process as it goes along, much as Hofstadter does in his book.
 
 One of the fascinating things about the hailstone sequence is that no one has yet been able to prove that the process always stops. The number of steps in the process can get very large, but somehow it always seems to climb back down to one.
+*/
+void exer10() {
+    /* hailstone sequance */
+    int n = getInteger("Enter a positive integer: ");
+    while(n > 1) {
+        switch (n % 2) {
+        case 0:
+            cout << n << " is even, get ";
+            n = n / 2;
+            cout << n << endl;
+            break;
+        default:
+            cout << n << " is odd, get ";
+            n = n * 3 + 1;
+            cout << n << endl;
+            break;
+        }
+    }
+    cout << "reched the end of the sequence" << endl;
+}
 
-11. The German mathematician Leibniz (1646–1716) discovered the rather remarkable fact that the mathematical constant π can be computed using the following mathematical relationship:
+/*
+11.The German mathematician Leibniz (1646–1716) discovered the rather remarkable fact that the mathematical constant π can be computed using the following mathematical relationship:
 
-≅ 1 –
+$$\frac{\pi}{4}\sim 1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots$$
 
-+
-
-–
-
-+
-
-–
-
-+ . . .
-
-The formula to the right of the equal sign represents an infinite series; each fraction represents a term in that series. If you start with 1, subtract one-third,
-
-
-
-
-
-54
-
-Overview of C++
-
-add one-fifth, and so on, for each of the odd integers, you get a number that gets closer and closer to the value of π/4 as you go along.
+The formula to the right of the equal sign represents an infinite series; each fraction represents a term in that series. If you start with 1, subtract one-third, add one-fifth, and so on, for each of the odd integers, you get a number that gets closer and closer to the value of π/4 as you go along.
 
 Write a program that calculates an approximation of π consisting of the first 10,000 terms in Leibniz’s series.
 
-12. You can also compute π by approximating the area bounded by a circular arc.
-
-Consider the following quarter circle:
+12. You can also compute π by approximating the area bounded by a circular arc. Consider the following quarter circle:
 
 which has a radius r equal to two inches. From the formula for the area of a circle, you can easily determine that the area of the quarter circle should be π
 
@@ -313,8 +293,9 @@ The sum of the areas of the rectangles approximates the area of the quarter circ
 
 For each rectangle, the width w is a constant derived by dividing the radius by the number of rectangles. The height h, on the other hand, varies depending on the position of the rectangle. If the midpoint of the rectangle in the horizontal direction is given by x, the height of the rectangle can be computed using the sqrt function to express the distance formula h =
 
+$$h=\sqrt{r^2 - x^2}$$
+
 The area of each rectangle is then simply h × w.
 
 Write a program to compute the area of the quarter circle by dividing it into 10,000 rectangles.
-
- */
+*/
