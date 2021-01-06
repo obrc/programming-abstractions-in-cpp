@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 SUBDIRS = Library Welcome \
+    Draft \
     HelloWorld \
     Lecture1-output-input \
     Lecture2-Function \
