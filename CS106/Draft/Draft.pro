@@ -64,7 +64,8 @@ DEFINES     +=  main=qMain qMain=studentMain
 SOURCES         *=  "" \
     _direction.cpp
 HEADERS         *=  "" \
-    _direction.h
+    _direction.h \
+    testmath.h
 
 # Gather any .cpp or .h files within the project folder (student/starter code).
 # Second argument true makes search recursive
