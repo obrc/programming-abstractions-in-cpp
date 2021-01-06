@@ -62,7 +62,8 @@ DEFINES     +=  main=qMain qMain=studentMain
 # Afterward we glob-add files to SOURCES ourselves. Operator *= will unique
 # entries, so no worries about duplicates
 SOURCES         *=  "" \
-    _direction.cpp
+    _direction.cpp \
+    testmath.cpp
 HEADERS         *=  "" \
     _direction.h \
     testmath.h
