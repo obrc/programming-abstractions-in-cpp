@@ -1,5 +1,4 @@
 # programming-abstractions-in-cpp
 
-[lectures](https://web.stanford.edu/class/cs106b/about_lectures)
+[CS106B Archive](https://www.keithschwarz.com/cs106b/)
 
-[qt creator mac install](https://web.stanford.edu/class/cs106b/qt/install-mac)
