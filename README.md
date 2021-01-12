@@ -5,3 +5,6 @@
 [Youtube Video: CS106B - 2018 Winter](https://www.youtube.com/watch?v=Ua-31ucGAZ0&list=PLoCMsyE1cvdWiqgyzwAz_uGLSHsuYZlMX)
 
 [Textbook Exercise](./TextbookExerciseAll.md)
+
+
+
