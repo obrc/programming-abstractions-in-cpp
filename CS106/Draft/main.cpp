@@ -3,7 +3,7 @@
 #include "testmath.h"
 //#include "gmath.h"
 
-int main()
+int main_disable()
 {
     /* book say
 In C++, constants written in this form are private to the source file that contains   them and cannot be exported through an interface. To export the constant PI, you   need to add the keyword extern to both its definition and the prototype declaration   in the interface.
