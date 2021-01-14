@@ -44,6 +44,6 @@ bool randomChance(double p) {
 }
 
 void setRandomSeed(int seed) {
-    initRandomSeed();
+    initRandomSeed(); // for setting the flag true
     srand(seed);
 }
