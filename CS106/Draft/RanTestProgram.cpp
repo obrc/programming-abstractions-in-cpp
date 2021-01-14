@@ -2,7 +2,7 @@
 #include <cstdlib>
 using namespace std;
 
-int main() {
+int rantestprogram() {
     cout << "RAND_MAX = " << RAND_MAX << endl << "Get 10 rand() return " << endl;
     for (int i = 1 ; i <= 10; i++)
         cout << rand() << endl;
